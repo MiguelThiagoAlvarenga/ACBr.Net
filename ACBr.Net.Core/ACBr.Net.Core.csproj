@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3320CA18-154B-43AB-8901-7CC1A311198B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACBr.Net.Core</RootNamespace>
+    <AssemblyName>ACBr.Net.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ECF\Aliquota.cs" />
+    <Compile Include="ECF\ComprovanteNaoFiscal.cs" />
+    <Compile Include="ECF\DAVs.cs" />
+    <Compile Include="ECF\EstadoECF.cs" />
+    <Compile Include="ECF\FinalizaArqMFD.cs" />
+    <Compile Include="ECF\FormaPagamento.cs" />
+    <Compile Include="ECF\ModeloECF.cs" />
+    <Compile Include="ECF\RelatorioGerencial.cs" />
+    <Compile Include="ECF\TipoContador.cs" />
+    <Compile Include="ECF\TipoDocumento.cs" />
+    <Compile Include="Interface\IECF.cs" />
+    <Compile Include="AAC\AACECF.cs" />
+    <Compile Include="AAC\Arquivo.cs" />
+    <Compile Include="AAC\ArquivoListaAutenticados.cs" />
+    <Compile Include="AAC\Arquivos.cs" />
+    <Compile Include="AAC\ECFs.cs" />
+    <Compile Include="AAC\Empresa.cs" />
+    <Compile Include="AAC\IdenticacaoPaf.cs" />
+    <Compile Include="AAC\InfoPaf.cs" />
+    <Compile Include="ACBrComponent.cs" />
+    <Compile Include="Events\ChaveEventArgs.cs" />
+    <Compile Include="AAC\TipoDesenvolvimento.cs" />
+    <Compile Include="AAC\TipoFuncionamento.cs" />
+    <Compile Include="AAC\TipoIntegracao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NFe\Schemas\cancNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\cancNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\CCe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\confRecebto_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consCad_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consDPEC_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consNFeDest_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consReciNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consReciNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consSitNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consSitNFe_v2.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consSitNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consStatServ_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\consStatServ_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\downloadNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\e110110_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\e110111_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\e210200_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\e210210_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\e210220_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\e210240_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\envCCe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\envConfRecebto_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\envDPEC_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\envEventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\envEvento_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\enviNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\enviNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\eventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\inutNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\inutNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteCancNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteCancNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteCCe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteConfRecebto_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteConsNFeDest_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteConsSitNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteConsSitNFe_v2.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteConsSitNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteConsStatServ_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteConsStatServ_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteConsultaCadastro_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteDownloadNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteDPEC_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteEventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteInutNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteInutNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\leiauteSRE_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\nfe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\nfe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procCancNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procCancNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procCCeNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procConfRecebtoNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procEventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procEventoNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procInutNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procInutNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\procNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retCancNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retCancNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsCad_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsDPEC_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retconsNFeDest_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsReciNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsReciNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsSitNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsSitNFe_v2.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsSitNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsStatServ_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retConsStatServ_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retDownloadNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retDPEC_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retEnvCCe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retEnvConfRecebto_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retEnvEventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retEnvEvento_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retEnviNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retEnviNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retInutNFe_v2.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\retInutNFe_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\tiposBasico_v1.03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\tiposBasico_v1.03_OPENSSL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\tiposBasico_v3.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NFe\Schemas\xmldsig-core-schema_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PAF\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
