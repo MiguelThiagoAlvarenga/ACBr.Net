@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,16 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Device\ACBrDevice.cs" />
     <Compile Include="ECF\Aliquota.cs" />
     <Compile Include="ECF\ComprovanteNaoFiscal.cs" />
     <Compile Include="ECF\DAVs.cs" />
     <Compile Include="ECF\EstadoECF.cs" />
     <Compile Include="ECF\FinalizaArqMFD.cs" />
     <Compile Include="ECF\FormaPagamento.cs" />
-    <Compile Include="ECF\ModeloECF.cs" />
     <Compile Include="ECF\RelatorioGerencial.cs" />
     <Compile Include="ECF\TipoContador.cs" />
     <Compile Include="ECF\TipoDocumento.cs" />
+    <Compile Include="Exceptions\ACBrException.cs" />
     <Compile Include="Interface\IECF.cs" />
     <Compile Include="AAC\AACECF.cs" />
     <Compile Include="AAC\Arquivo.cs" />

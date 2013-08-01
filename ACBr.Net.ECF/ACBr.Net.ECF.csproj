@@ -47,6 +47,7 @@
     <Compile Include="Classes\Consumidor.cs" />
     <Compile Include="Classes\DadosReducaoZClass.cs" />
     <Compile Include="Classes\Imposto.cs" />
+    <Compile Include="Classes\ModeloECF.cs" />
     <Compile Include="Classes\Restaurante.cs" />
     <Compile Include="Classes\Rodape.cs" />
     <Compile Include="Classes\RodapeNotaLegalDF.cs" />

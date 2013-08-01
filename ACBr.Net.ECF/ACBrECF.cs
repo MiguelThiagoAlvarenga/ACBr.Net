@@ -501,8 +501,8 @@ namespace ACBr.Net.ECF
         [Category("Configutações ECF")]
         public ModeloECF Modelo { get; set; }
 
-        //[Category("Configutações ECF")]
-        //public ACBrDevice Device { get; private set; }
+        [Category("Configutações ECF")]
+        public ACBrDevice Device { get; private set; }
 
         [Category("Propriedades")]
         public int MaxLinhasBuffer { get; set; }
@@ -546,7 +546,7 @@ namespace ACBr.Net.ECF
         #region Propriedades Não-visiveis
 
         [Browsable(false)]
-        public bool Ativo { get; }
+        public bool Ativo { get { return Device.Ativo; } }
 
         [Browsable(false)]
         public DateTime DataHoraUltimaReducaoZ { get; }
@@ -969,7 +969,7 @@ namespace ACBr.Net.ECF
             if (ECF == null)
                 throw new NullReferenceException("Escolha um modelo de ECF");
 
-            ECF.Ativar();
+            Device.Ativar();
         }
 
         public void Desativar()
@@ -2007,6 +2007,7 @@ namespace ACBr.Net.ECF
 
         protected internal override void OnInitialize()
         {
+            Device = new ACBrDevice();
             InfoRodapeCupom = new Rodape();
             ConfigBarras = new ConfigBarras();
             Consumidor = new Consumidor();

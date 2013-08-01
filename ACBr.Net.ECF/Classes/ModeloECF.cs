@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 #endif
 #endregion COM_INTEROP
 
-namespace ACBr.Net.Core.ECF
+namespace ACBr.Net.ECF
 {
 	#region COM_INTEROP
 #if COM_INTEROP
