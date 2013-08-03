@@ -7,14 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACBr.Net.ECF", "ACBr.Net.EC
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		COM Interop|Any CPU = COM Interop|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3320CA18-154B-43AB-8901-7CC1A311198B}.COM Interop|Any CPU.ActiveCfg = COM Interop|Any CPU
+		{3320CA18-154B-43AB-8901-7CC1A311198B}.COM Interop|Any CPU.Build.0 = COM Interop|Any CPU
 		{3320CA18-154B-43AB-8901-7CC1A311198B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3320CA18-154B-43AB-8901-7CC1A311198B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3320CA18-154B-43AB-8901-7CC1A311198B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3320CA18-154B-43AB-8901-7CC1A311198B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5048CBA-F872-4CA3-A961-245F6D985E93}.COM Interop|Any CPU.ActiveCfg = COM Interop|Any CPU
+		{F5048CBA-F872-4CA3-A961-245F6D985E93}.COM Interop|Any CPU.Build.0 = COM Interop|Any CPU
 		{F5048CBA-F872-4CA3-A961-245F6D985E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5048CBA-F872-4CA3-A961-245F6D985E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5048CBA-F872-4CA3-A961-245F6D985E93}.Release|Any CPU.ActiveCfg = Release|Any CPU

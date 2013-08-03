@@ -331,11 +331,12 @@ namespace ACBr.Net.ECF
 	[Guid("7F5440D4-8D62-441B-9251-E911437D5F8F")]
 	[ComSourceInterfaces(typeof(IACBrECFEvents))]
 	[ClassInterface(ClassInterfaceType.AutoDual)]
+
 #endif
 
     #endregion COM Interop Attributes
 
-    [ToolboxBitmap(typeof(ToolboxIcons), @"ACBr.Net.ECF.ico.bmp")]
+    [ToolboxBitmap(typeof(ACBrECF), @"ACBr.Net.ECF.ico.bmp")]
     public sealed class ACBrECF : ACBrComponent, IDisposable
     {
         #region Events
@@ -1949,7 +1950,7 @@ namespace ACBr.Net.ECF
 
         public void EfetuaPagamentoNaoFiscal(string codFormaPagto, [MarshalAs(UnmanagedType.Currency)] decimal valor, string observacao = "", bool imprimeVinculado = false)
         {
-            i if (ECF == null)
+            if (ECF == null)
                 throw new NullReferenceException("Escolha um modelo de ECF");
         }
 

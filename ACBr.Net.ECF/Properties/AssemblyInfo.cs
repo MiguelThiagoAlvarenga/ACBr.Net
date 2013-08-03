@@ -5,14 +5,24 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ACBr.Net.ECF")]
-[assembly: AssemblyDescription("ACBrECF Componente")]
+#if COM_INTEROP
+[assembly: AssemblyTitle("ACBr.Net ECF ActiveX")]
+[assembly: AssemblyDescription("ACBr.Net ECF ActiveX")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ACBr.Net")]
-[assembly: AssemblyProduct("ACBr.Net.ECF")]
-[assembly: AssemblyCopyright("Copyright © ACBr.Net  2013")]
+[assembly: AssemblyProduct("ACBr.Net ECF ActiveX")]
+[assembly: TypeLibVersion(109, 23)]
+#else
+[assembly: AssemblyTitle("ACBr.Net ECF")]
+[assembly: AssemblyDescription("ACBr.Net ECF")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("ACBr.Net")]
+[assembly: AssemblyProduct("ACBr.Net ECF")]
+#endif
+
+[assembly: AssemblyCopyright("Copyright © ACBr.Net 2013")]
 [assembly: AssemblyTrademark("ACBr.Net")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyCulture("pt-BR")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -34,5 +44,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-internal sealed class ToolboxIcons { }

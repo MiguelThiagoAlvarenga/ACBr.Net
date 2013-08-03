@@ -5,14 +5,24 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ACBr.Net.Core")]
-[assembly: AssemblyDescription("ACBr.Net.Core")]
+#if COM_INTEROP
+[assembly: AssemblyTitle("ACBr.Net Core ActiveX")]
+[assembly: AssemblyDescription("ACBr.Net Core ActiveX")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ACBr.Net")]
-[assembly: AssemblyProduct("ACBr.Net")]
+[assembly: AssemblyProduct("ACBr.Net Core ActiveX")]
+[assembly: TypeLibVersion(109, 23)]
+#else
+[assembly: AssemblyTitle("ACBr.Net Core")]
+[assembly: AssemblyDescription("ACBr.Net Core")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("ACBr.Net")]
+[assembly: AssemblyProduct("ACBr.Net Core")]
+#endif
+
 [assembly: AssemblyCopyright("Copyright © ACBr.Net 2013")]
 [assembly: AssemblyTrademark("ACBr.Net")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyCulture("pt-BR")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

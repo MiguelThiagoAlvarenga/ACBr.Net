@@ -30,6 +30,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'COM Interop|AnyCPU'">
+    <OutputPath>bin\COM Interop\</OutputPath>
+    <DefineConstants>TRACE;COM_INTEROP</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,6 +60,7 @@
     <Compile Include="Classes\Restaurante.cs" />
     <Compile Include="Classes\Rodape.cs" />
     <Compile Include="Classes\RodapeNotaLegalDF.cs" />
+    <Compile Include="ECF\ACBrECFDaruma.cs" />
     <Compile Include="Eventos\AbreCupomEventArgs.cs" />
     <Compile Include="Eventos\BobinaAdicionaLinhasEventArgs.cs" />
     <Compile Include="Eventos\CancelaItemEventArgs.cs" />

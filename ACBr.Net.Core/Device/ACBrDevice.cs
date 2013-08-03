@@ -23,10 +23,8 @@ namespace ACBr.Net.Core
 
         const string ACBrDeviceAtivarPortaException    = "Porta não definida";
         const string ACBrDeviceAtivarException         = "Erro abrindo: ";
-        const string ACBrDeviceSetBaudException        = "Valor deve estar na faixa de 50 a 4000000." + Environment.NewLine + 
-                                                         "Normalmente os equipamentos Seriais utilizam: 9600";
-        const string ACBrDeviceSetDataException        = "Valor deve estar na faixa de 5 a 8." + Environment.NewLine + 
-                                                         "Normalmente os equipamentos Seriais utilizam: 7 ou 8";
+        const string ACBrDeviceSetBaudException        = "Valor deve estar na faixa de 50 a 4000000.\nNormalmente os equipamentos Seriais utilizam: 9600";
+        const string ACBrDeviceSetDataException        = "Valor deve estar na faixa de 5 a 8.\nNormalmente os equipamentos Seriais utilizam: 7 ou 8";
         const string ACBrDeviceSetPortaException       = "Não é possível mudar a Porta com o Dispositivo Ativo";
         const string ACBrDeviceEnviaStrThreadException = "Erro gravando em: ";       
 

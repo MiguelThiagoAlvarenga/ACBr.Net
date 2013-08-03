@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ACBr.Net" default="build"> 
+
+  <property name="dir.bin" value="Build" />
+  
+  <target name="build" description="Gera a dll para .Net 4.0">
+    <msbuild project="ACBr.Net.sln">
+    	<property name="Configuration" value="Release" />
+		<property name="OutDir" value="..\${dir.bin}\\Net40\\" />
+	</msbuild>
+  </target>
+  
+  <target name="cominterop" description="Gera a dll com COM Interop">
+    <msbuild project="ACBr.Net.sln">
+    	<property name="Configuration" value="COM Interop" />
+		<property name="OutDir" value="..\${dir.bin}\\COM Interop\\" />
+	</msbuild>
+  </target>
+  
+</project> 
