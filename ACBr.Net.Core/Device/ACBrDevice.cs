@@ -11,17 +11,20 @@ using System.Runtime.InteropServices;
 
 namespace ACBr.Net.Core
 {
+
 #if COM_INTEROP
 
 	[ComVisible(true)]
 	[Guid("29A5B338-6E3C-47D3-AA31-91965AEF568C")]
 	[ClassInterface(ClassInterfaceType.AutoDual)]
-#endif
-	public class ACBrDevice
+
+#endif    
+
+    public sealed class ACBrDevice : IDisposable
     {
         #region Constantes
 
-        const string ACBrDeviceAtivarPortaException    = "Porta não definida";
+        const string ACBrDeviceAtivarPortaException    = "Porta não definida\\incorreta";
         const string ACBrDeviceAtivarException         = "Erro abrindo: ";
         const string ACBrDeviceSetBaudException        = "Valor deve estar na faixa de 50 a 4000000.\nNormalmente os equipamentos Seriais utilizam: 9600";
         const string ACBrDeviceSetDataException        = "Valor deve estar na faixa de 5 a 8.\nNormalmente os equipamentos Seriais utilizam: 7 ou 8";
@@ -34,29 +37,33 @@ namespace ACBr.Net.Core
 
         private SerialPort COMPort;
         private string port;
+        private int timeout;
         private int baud;
         private int data;   
         private bool hard;
         private bool soft;
+        private int interval;
         private Handshake hand;
+        private StopBits stop;
+        private Parity parity;
 
         #endregion Field
 
         #region Constructor
 
-        protected internal ACBrDevice()
+        private ACBrDevice()
 		{
-            Porta = string.Empty;
+            port = string.Empty;
             Ativo = false;
-            TimeOut = 3;
-            Parity = Parity.None;
-            HardFlow = false;
-            SoftFlow = false;
-            DataBits = 8;
-            Baud = 9600;
+            timeout = 3;
+            parity = Parity.None;
+            hard = false;
+            soft = false;
+            data = 8;
+            baud = 9600;
             ProcessMessages = true;
             SendBytesCount = 0;
-            SendBytesInterval = 0;
+            interval = 0;
         }
 
 		#endregion Constructor
@@ -91,9 +98,29 @@ namespace ACBr.Net.Core
             }
         }
 
-        public Parity Parity { get; set; }
+        public Parity Parity 
+        { 
+            get
+            {
+                return parity;
+            }
+            set
+            {
+                SetParity(value);
+            }
+        }
 
-        public StopBits StopBits { get; set; }
+        public StopBits StopBits
+        {
+            get
+            {
+                return stop;
+            }
+            set
+            {
+                SetStop(value);
+            }
+        }
 
         public Handshake HandShake
         {
@@ -131,17 +158,37 @@ namespace ACBr.Net.Core
             }
         }
 
-        public int TimeOut { get; set; }
+        public int TimeOut
+        {
+            get
+            {
+                return timeout;
+            }
+            set
+            {
+                SetTimeout(value);
+            }
+        }
 
         public int SendBytesCount { get; set; }
 
-        public int SendBytesInterval { get; set; }
+        public int SendBytesInterval
+        {
+            get
+            {
+                return interval;
+            }
+            set
+            {
+                SetBytesInterval(value);
+            }
+        }
 
         public bool ProcessMessages { get; set; }
 
 		#endregion Properties
 
-        #region SetMethods
+        #region SetGetMethods
 
         private void SetPorta(string value)
         {
@@ -212,7 +259,57 @@ namespace ACBr.Net.Core
             data = value;
         }
 
-        #endregion SetMethods
+        private void SetTimeout(int value)
+        {
+            if (timeout == value)
+                return;
+
+            if (value < 1)
+                value = 1;
+
+            timeout = value;
+
+            if (COMPort != null)
+            {
+                COMPort.WriteTimeout = timeout * 1000;
+                COMPort.ReadTimeout = timeout * 1000;
+            }
+        }
+
+        private void SetBytesInterval(int value)
+        {
+            if (interval == value)
+                return;
+
+            if (interval < 0)
+                value = 0;
+
+            interval = value;
+        }
+
+        private void SetStop(StopBits value)
+        {
+            if (stop == value)
+                return;
+
+            stop = value;
+
+            if (COMPort != null)
+                COMPort.StopBits = stop;
+        }
+
+        private void SetParity(Parity value)
+        {
+            if (parity == value)
+                return;
+
+            parity = value;
+
+            if (COMPort != null)
+                COMPort.Parity = parity;
+        }
+
+        #endregion SetGetMethods
 
         #region Methods
 
@@ -311,14 +408,14 @@ namespace ACBr.Net.Core
             if(COMPort.IsOpen)
                 return;
 
-            COMPort.PortName = Porta;
-            COMPort.ReadTimeout = TimeOut * 100;
-            COMPort.WriteTimeout = TimeOut * 100;
-            COMPort.BaudRate = Baud;
-            COMPort.DataBits = DataBits;
-            COMPort.Parity = Parity;
-            COMPort.StopBits = StopBits;
-            COMPort.Handshake = HandShake;
+            COMPort.PortName = port;
+            COMPort.ReadTimeout = timeout * 1000;
+            COMPort.WriteTimeout = timeout * 1000;
+            COMPort.BaudRate = baud;
+            COMPort.DataBits = data;
+            COMPort.Parity = parity;
+            COMPort.StopBits = stop;
+            COMPort.Handshake = hand;
             COMPort.ErrorReceived += COMPort_ErrorReceived;
             COMPort.DataReceived += COMPort_DataReceived;
         }
@@ -339,5 +436,30 @@ namespace ACBr.Net.Core
         }
 
         #endregion Eventhandlers
+
+        #region Dispose Methods
+
+        private void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                GC.SuppressFinalize(this);
+            }
+
+            if (COMPort != null)
+            {
+                if (Ativo)
+                    COMPort.Close();
+
+                COMPort.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        #endregion Dispose Methods
     }
 }
