@@ -6,23 +6,22 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 #if COM_INTEROP
-[assembly: AssemblyTitle("ACBr.Net ECF ActiveX")]
-[assembly: AssemblyDescription("ACBr.Net ECF Library")]
+[assembly: AssemblyTitle("ACBr.Net.NFe")]
+[assembly: AssemblyDescription("ACBrNFe Library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ACBr.Net")]
-[assembly: AssemblyProduct("ACBr.Net ECF ActiveX")]
-[assembly: TypeLibVersion(109, 23)]
+[assembly: AssemblyProduct("ACBr.Net NFe ActiveX")]
 #else
-[assembly: AssemblyTitle("ACBr.Net ECF")]
-[assembly: AssemblyDescription("ACBr.Net ECF Library")]
+[assembly: AssemblyTitle("ACBr.Net.NFe")]
+[assembly: AssemblyDescription("ACBrNFe Library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ACBr.Net")]
-[assembly: AssemblyProduct("ACBr.Net ECF")]
+[assembly: AssemblyProduct("ACBr.Net NFe")]
 #endif
 
-[assembly: AssemblyCopyright("Copyright © ACBr.Net 2013")]
+[assembly: AssemblyCopyright("Copyright ACBr.Net ©  2013")]
 [assembly: AssemblyTrademark("Projeto ACBr.Net https://github.com/rftd/ACBr.Net")]
-[assembly: AssemblyCulture("pt-BR")]
+[assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -30,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7e0a9bf6-390c-46a0-b1d1-e2f1df30abc7")]
+[assembly: Guid("c8f410f4-6099-43e0-8bf9-0f751925ff6e")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -986,11 +986,13 @@ namespace ACBr.Net.ECF
         #region Métodos ECF
 
         public bool AcharECF(bool Modelo = true, bool Porta = true, int TimeOut = 3)
-        {            
+        {
+            return true;
         }
 
         public bool AcharPorta(int TimeOut = 3)
         {
+            return true;
         }
 
         public bool EmLinha(int timeOut = 1)
@@ -998,7 +1000,7 @@ namespace ACBr.Net.ECF
             if (ECF == null)
                 throw new NullReferenceException("Escolha um modelo de ECF");
 
-            ECF.EmLinha(timeOut);
+            return ECF.EmLinha(timeOut);
         }
 
         public void PulaLinhas(int numLinhas)
@@ -1064,7 +1066,7 @@ namespace ACBr.Net.ECF
             if (ECF == null)
                 throw new NullReferenceException("Escolha um modelo de ECF");
 
-            ECF.EnviaComando(cmd, timeout);
+            return ECF.EnviaComando(cmd, timeout);
         }
 
         #endregion Métodos ECF
@@ -1093,7 +1095,7 @@ namespace ACBr.Net.ECF
             if (ECF == null)
                 throw new NullReferenceException("Escolha um modelo de ECF");
 
-            ECF.LeituraCMC7();
+            return ECF.LeituraCMC7();
         }
 
         #endregion Métodos Cheque
@@ -1608,14 +1610,10 @@ namespace ACBr.Net.ECF
         public string LeituraMemoriaFiscalSerial(int reducaoInicial, int reducaoFinal, bool simplificada = false)
 #endif
         {
-            const int LEN = 10 * 1024;
-            StringBuilder buffer = new StringBuilder(LEN);
+            if (ECF == null)
+                throw new NullReferenceException("Escolha um modelo de ECF");
 
-            int ret = ACBrECFInterop.ECF_LeituraMemoriaFiscalSerialReducao(this.Handle, reducaoInicial, reducaoFinal, simplificada, buffer, LEN);
-            CheckResult(ret);
-
-            buffer.Length = ret;
-            return FromUTF8(buffer);
+            return ECF.LeituraMemoriaFiscalSerial(reducaoInicial, reducaoFinal, simplificada);
         }
 
 #if COM_INTEROP
@@ -1626,14 +1624,10 @@ namespace ACBr.Net.ECF
         public string LeituraMemoriaFiscalSerial(DateTime dataInicial, DateTime dataFinal, bool simplificada = false)
 #endif
         {
-            const int LEN = 10 * 1024;
-            StringBuilder buffer = new StringBuilder(LEN);
+            if (ECF == null)
+                throw new NullReferenceException("Escolha um modelo de ECF");
 
-            int ret = ACBrECFInterop.ECF_LeituraMemoriaFiscalSerialData(this.Handle, dataInicial.ToOADate(), dataFinal.ToOADate(), simplificada, buffer, LEN);
-            CheckResult(ret);
-
-            buffer.Length = ret;
-            return FromUTF8(buffer);
+            return ECF.LeituraMemoriaFiscalSerial(dataInicial, dataFinal, simplificada);
         }
 
 #if COM_INTEROP
@@ -1644,8 +1638,10 @@ namespace ACBr.Net.ECF
         public void LeituraMemoriaFiscalSerial(int reducaoInicial, int reducaoFinal, string nomeArquivo, bool simplificada = false)
 #endif
         {
-            int ret = ACBrECFInterop.ECF_LeituraMemoriaFiscalArquivoReducao(this.Handle, reducaoInicial, reducaoFinal, ToUTF8(nomeArquivo), simplificada);
-            CheckResult(ret);
+            if (ECF == null)
+                throw new NullReferenceException("Escolha um modelo de ECF");
+
+            ECF.LeituraMemoriaFiscalSerial(reducaoInicial, reducaoFinal, nomeArquivo, simplificada);
         }
 
 #if COM_INTEROP
@@ -1656,8 +1652,10 @@ namespace ACBr.Net.ECF
         public void LeituraMemoriaFiscalSerial(DateTime dataInicial, DateTime dataFinal, string nomeArquivo, bool simplificada = false)
 #endif
         {
-            int ret = ACBrECFInterop.ECF_LeituraMemoriaFiscalArquivoData(this.Handle, dataInicial.ToOADate(), dataFinal.ToOADate(), ToUTF8(nomeArquivo), simplificada);
-            CheckResult(ret);
+            if (ECF == null)
+                throw new NullReferenceException("Escolha um modelo de ECF");
+
+            ECF.LeituraMemoriaFiscalSerial(dataInicial, dataFinal, nomeArquivo, simplificada);
         }
 
         #endregion Leitura Memoria Fiscal

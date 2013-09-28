@@ -51,7 +51,7 @@ namespace ACBr.Net.Core
 
         #region Constructor
 
-        private ACBrDevice()
+        public ACBrDevice()
 		{
             port = string.Empty;
             Ativo = false;
