@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace ACBr.Net.NFe
@@ -12,24 +13,30 @@ namespace ACBr.Net.NFe
 
 		internal NotaFiscal()
 		{
-            NFe = new NFE();
+            NFe = new NFe();
 		}
 
 		#endregion Constructor
 
 		#region Properties
 
-        public NFE NFe { get; private set; }
+        public NFe NFe { get; private set; }
 
         public string Alertas { get; set; }
 
         public string XML { get; set; }
+
+        public string XMLOriginal { get; set; }
 
         public string Msg { get; set; }
 
         public string NomeArq { get; set; }
 
         public bool Confirmada { get; set; }
+        
+        public string ErroValidacao { get; set; }
+        
+        public string ErroValidacaoCompleto { get; set; }   
 
 		#endregion Properties
 
@@ -49,6 +56,11 @@ namespace ACBr.Net.NFe
 		{
             return true;
 		}
+
+        public bool SaveToStream(Stream arquivo)
+        {
+            return true;
+        }
 
 		public void EnviarEmail(string sSmtpHost, string sSmtpPort, string sSmtpUser, string sSmtpPasswd,
 			        string sFrom, string sTo, string sAssunto, string[] sMensagem, bool SSL, bool EnviaPDF = true,

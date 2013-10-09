@@ -79,17 +79,16 @@ namespace ACBr.Net.NFe
             list.Clear();
         }
 
+        public void GerarNFe()
+        {
+        }        
+
 		public void Assinar()
 		{
 			
 		}
 
 		public void Valida()
-		{
-			
-		}
-
-		public void GerarNFe()
 		{
 			
 		}

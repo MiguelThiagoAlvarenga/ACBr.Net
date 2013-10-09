@@ -61,6 +61,8 @@
     <Compile Include="ECF\TipoContador.cs" />
     <Compile Include="ECF\TipoDocumento.cs" />
     <Compile Include="Exceptions\ACBrException.cs" />
+    <Compile Include="Exceptions\ACBrNFeException.cs" />
+    <Compile Include="Exceptions\ACBrNFSeException.cs" />
     <Compile Include="Interface\IECF.cs" />
     <Compile Include="AAC\AACECF.cs" />
     <Compile Include="AAC\Arquivo.cs" />

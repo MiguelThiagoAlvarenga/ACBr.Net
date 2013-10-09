@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using ACBr.Net.Core;
+#region COM Interop Attributes
+
+#if COM_INTEROP
+using System.Runtime.InteropServices;
+#endif
+
+#endregion COM Interop Attributes
 
 namespace ACBr.Net.NFe
 {
@@ -114,20 +119,20 @@ namespace ACBr.Net.NFe
 #endif
 
     #endregion COM Interop Attributes
-
-	[ToolboxBitmap(typeof(ACBrNFE), @"ACBr.Net.NFE.ico.bmp")]
-	public class ACBrNFE : ACBrComponent
+	[ToolboxBitmap(typeof(ACBrNFe), @"ACBr.Net.NFe.ico.bmp")]
+	public class ACBrNFe : ACBrComponent
 	{
 		#region Events
 				
 		#endregion Events
 
 		#region Fields
+
 		#endregion Fields
 
 		#region Constructor
 
-		public ACBrNFE()
+		public ACBrNFe()
 		{
             
 		}
@@ -163,7 +168,8 @@ namespace ACBr.Net.NFe
         }
 
 		protected override void OnDisposing()
-		{			
+		{
+                      
 		}
 
 		#endregion Override Methods

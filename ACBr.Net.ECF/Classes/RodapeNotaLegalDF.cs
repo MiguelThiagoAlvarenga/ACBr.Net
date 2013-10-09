@@ -52,7 +52,7 @@ namespace ACBr.Net.ECF
             #region COM_INTEROP
 
 #if COM_INTEROP
-			[return: MarshalAs(UnmanagedType.Currency)]
+			[param: MarshalAs(UnmanagedType.Currency)]
 #endif
 
             #endregion COM_INTEROP

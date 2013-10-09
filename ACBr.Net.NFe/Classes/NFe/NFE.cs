@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace ACBr.Net.NFe
 {
     [Serializable]
-    public sealed class NFE
+    public sealed class NFe
 	{
 		#region Fields
 		#endregion Fields
 
 		#region Constructor
 
-		internal NFE()
+		internal NFe()
 		{
 			Emit = new Emit();
 			InfNFE = new InfNFe();
@@ -19,6 +19,7 @@ namespace ACBr.Net.NFe
 			Retirada = new Retirada();
 			Entrega = new Entrega();
 			Det = new DetCollection();
+            Total = new Total();
 		}
 
 		#endregion Constructor
@@ -32,10 +33,32 @@ namespace ACBr.Net.NFe
 		public Retirada Retirada { get; private set; }
 		public Entrega Entrega { get; private set; }
 		public DetCollection Det { get; private set; }
-
+        public Total Total { get; private set; }
+        
 		#endregion Properties
 
 		#region Methods
 		#endregion Methods
 	}
+
+    [Serializable]
+    public sealed class Total
+    {
+        #region Constructor
+        
+        internal Total()
+        {
+            ICMSTot = new ICMSTot();
+        }
+
+        #endregion Constructor
+
+        #region Propriedades
+
+        public ICMSTot ICMSTot { get; private set; }
+        //public ISSQNtot ISSQNtot { get; private set; }
+        //public retTrib retTrib { get; private set; }
+
+        #endregion Propriedades
+    }
 }
